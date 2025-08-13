@@ -1,0 +1,21 @@
+services:
+  react-app:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      default:
+      jumpseller:
+        aliases:
+          - react-sunset-sunrise
+    environment:
+      - PORT=3001
+    command: npm start
+
+networks:
+  jumpseller:
+    external: true
+    name: sunset-sunrise
