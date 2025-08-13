@@ -19,6 +19,11 @@ git clone git@github.com:Pedro705/react-sunset-sunrise.git
 cd react-sunset-sunrise
 ```
 
+3. Add an .env file and add the following line:
+```bash
+SUNRISE_SUNSET_API_URL="http://localhost:3000"
+```
+
 ### Running with Docker
 ```bash
 docker compose up
