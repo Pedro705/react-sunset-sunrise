@@ -35,7 +35,7 @@ npm start
 ## 🌐 Access the App
 After starting, open your browser to:
 ```
-http://localhost:3000
+http://localhost:3001
 ```
 
 ## 🐛 Troubleshooting
