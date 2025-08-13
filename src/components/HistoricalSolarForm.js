@@ -4,8 +4,8 @@ import '../styles/components/HistoricalSolarForm.css';
 const HistoricalSolarForm = ({ onSubmit, isLoading }) => {
   const [formData, setFormData] = useState({
     location: '',
-    startDate: '',
-    endDate: ''
+    start_date: '',
+    end_date: ''
   });
 
   const today = new Date().toISOString().split('T')[0];
@@ -41,8 +41,8 @@ const HistoricalSolarForm = ({ onSubmit, isLoading }) => {
         <label>Start Date</label>
         <input
           type="date"
-          id="startDate"
-          value={formData.startDate}
+          id="start_date"
+          value={formData.start_date}
           onChange={handleChange}
           max={today}
           required
@@ -53,10 +53,10 @@ const HistoricalSolarForm = ({ onSubmit, isLoading }) => {
         <label>End Date</label>
         <input
           type="date"
-          id="endDate"
-          value={formData.endDate}
+          id="end_date"
+          value={formData.end_date}
           onChange={handleChange}
-          min={formData.startDate}
+          min={formData.start_date}
           max={today}
           required
         />

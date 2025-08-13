@@ -8,13 +8,10 @@ services:
       - /app/node_modules
     env_file: .env
     networks:
-      default:
-      jumpseller:
-        aliases:
-          - react-sunset-sunrise
+      - default 
+      - sunset-sunrise
     command: npm start
 
 networks:
-  jumpseller:
+  sunset-sunrise:
     external: true
-    name: sunset-sunrise

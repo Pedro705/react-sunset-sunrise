@@ -16,7 +16,9 @@ const HistoricalSolarPage = () => {
     
     try {
       const queryParams = new URLSearchParams(formData).toString();
-      const response = await fetch(`http://localhost:3000/historical_solar_record?${queryParams}`, {
+      const apiUrl = process.env.REACT_APP_SUNRISE_SUNSET_API_URL;
+
+      const response = await fetch(`${apiUrl}/historical_solar_record?${queryParams}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -48,10 +50,9 @@ const HistoricalSolarPage = () => {
 
       {error && <div className="error-message">{error}</div>}
 
-       {/* results &&  */}
-      {(
+      {results && (
         <div className="results-container">
-          <h2>Solar Data for {location}</h2>
+          <h2>Results for {location}</h2>
           <div className="chart-and-table">
             <HistoricalSolarChart data={results} />
             <HistoricalSolarTable data={results} />
