@@ -33,6 +33,7 @@ const HistoricalSolarPage = () => {
       setResults(data);
       setLocation(formData.location);
     } catch (error) {
+      setResults(null);
       setError(error.message);
     } finally {
       setIsLoading(false);

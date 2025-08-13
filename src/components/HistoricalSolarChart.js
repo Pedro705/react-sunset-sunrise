@@ -6,6 +6,10 @@ import '../styles/components/HistoricalSolarChart.css';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const HistoricalSolarChart = ({ data }) => {
+    if (!data || !Array.isArray(data) || data.length === 0) {
+        return null;
+    }
+    
     const toSeconds = (timeStr) => {
         const [h, m, s] = timeStr.split(":").map(Number);
         return h * 3600 + m * 60 + s;

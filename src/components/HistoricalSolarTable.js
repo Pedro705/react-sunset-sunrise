@@ -9,6 +9,10 @@ import {
 } from '@mui/material';
 
 const HistoricalSolarTable = ({ data }) => {
+    if (!data || !Array.isArray(data) || data.length === 0) {
+        return null;
+    }
+    
     const formatDate = (dateString) => {
         try {
             const date = new Date(dateString);
@@ -35,7 +39,7 @@ const HistoricalSolarTable = ({ data }) => {
                     </TableRow>
                     </TableHead>
                     <TableBody>
-                        {data.map((item, index) => (
+                        {data?.map((item, index) => (
                             <TableRow key={index}>
                             <TableCell>{formatDate(item.date)}</TableCell>
                             <TableCell>{item.sunrise || "--"}</TableCell>
